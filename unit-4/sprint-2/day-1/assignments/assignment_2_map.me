@@ -1,0 +1,43 @@
+
+let arr = [4,3,2,1]
+
+// console.log(map)
+ Array.prototype.myrule = function(cb){
+    var result = []
+    for(index in this){
+        if(this.hasOwnProperty(index)){
+            result.push(cb(this[index] ,index , this))
+        }
+    }
+    return result 
+ }
+
+ var res = arr.myrule(function(val){
+    // console.log(val)
+    return val*val 
+ })
+
+ console.log(res)
+
+//  ---------------------------------------------------------------> 
+            //  PROP , STATE 
+//  PROP --> We pass prop in fuction and destruct it and we can use its value 
+
+// state --> State is an library provide by react we can update things with the help of state 
+
+
+
+
+
+// ------MAP , FILTER , REDUCE WORK  DESCRIBE --------------------------->
+
+        //   1.  MAP 
+//   MAP -> Map is just like an loop but its traverse from the whole array and allow us to perform some funcationalities and return the value , there is a diffrence between for each and map  ,forEach dont return anything and map return
+
+            //  2. FILTER 
+// FILTER ->  Filter helps us to filter anything from the array 
+
+            // 3. REDUCE 
+// REDUCE -> Reduce helps us in add subtract and perform certain types of operation .
+
+

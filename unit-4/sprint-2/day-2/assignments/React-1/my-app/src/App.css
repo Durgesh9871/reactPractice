@@ -1,0 +1,18 @@
+.App {
+  border: 2px solid red;
+  width: 50%;
+  margin: auto;
+  height: 600px ;
+
+}
+.App>div{
+  border: 2px solid red;
+  width: 70%;
+  margin: auto;
+  height: 100%;
+
+}
+
+
+
+

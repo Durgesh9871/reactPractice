@@ -1,0 +1,102 @@
+{
+    "Products": [
+      {    
+           "image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRc7geDzk4ZufmJFW-eVqLKZkIRokNE0lHd7Q&usqp=CAU" ,
+          "name" : "SmartPhone",
+          "price": 30,
+          "id" : 0
+      },
+      {
+        "image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBPT1nT7BmDikti39UmPedMHQDA1C4wvZbcg&usqp=CAU" ,
+          "name" : "Watch",
+          "price" : 20,
+          "id" : 1
+      },
+      {
+        "image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGhsOoiUGY8ppqyuIGvAhu1198PCJo7zO8dA&usqp=CAU" ,
+          "name" : "Shirt",
+          "price" : 50,
+          "id" : 2
+      },
+      {
+        "image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9K8QLfHg5XqDGXn1vlnfpHv639pFc6Out2g&usqp=CAU" ,
+          "name" : "Pants",
+          "price" : 100,
+          "id" : 3
+      } ,
+      {
+        "image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIffA6eaMNVT6SEEJ12kLTa0nbFa4G45mLCw&usqp=CAU" ,
+          "name" : "Micro Chip",
+          "price" : 150,
+          "id" : 4
+      } ,
+    
+
+
+      {
+        "image":"https://images.meesho.com/images/products/41291490/266hv_400.jpg" ,
+          "name" : "Urban Fashion",
+          "price" : 200 ,
+          "id" : 5
+          
+      } ,
+      {
+        "image":"https://images.meesho.com/images/products/130787599/xdkmx_400.jpg" ,
+          "name" : "Red Shirt",
+          "price" : 600 ,
+          "id" :  6
+      } ,
+      {
+        "image":"https://images.meesho.com/images/products/71807573/pzdjs_400.jpg" ,
+          "name" : "Braclet",
+          "price" : 64,
+          "id" : 7
+      } ,
+      {
+        "image":"https://images.meesho.com/images/products/108735416/qwacm_400.jpg" ,
+          "name" : "Cap",
+          "price" :747 ,
+          "id" : 8
+      } ,
+      {
+        "image":"https://images.meesho.com/images/products/125936938/icrzj_400.jpg" ,
+          "name" : "Gloves",
+          "price" :82 ,
+          "id" : 9
+      } ,
+      {
+        "image":"https://images.meesho.com/images/products/121332959/akmlz_400.jpg" ,
+          "name" : "socks",
+          "price" :735 ,
+          "id" : 10
+      } ,
+
+      
+
+      {
+        "image":"https://images.meesho.com/images/products/77061958/ipg5z_400.jpg" ,
+          "name" : "Electronic Utility",
+          "price" :235 ,
+          "id" : 11
+      } ,
+      {
+        "image":"https://images.meesho.com/images/products/122497238/ai4kq_400.jpg" ,
+          "name" : "Adapters",
+          "price" : 836,
+          "id" : 12
+      } ,
+      {
+        "image":"https://images.meesho.com/images/products/107442435/lvkvj_400.jpg" ,
+          "name" : "Remote",
+          "price" : 64,
+          "id" : 13
+      } ,
+      {
+        "image":"https://images.meesho.com/images/products/145155089/lothx_400.jpg" ,
+          "name" : "Pen drive",
+          "price" : 97,
+          "id" : 14
+      } 
+     
+    ]
+  }

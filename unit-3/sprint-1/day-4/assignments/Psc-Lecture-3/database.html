@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      table{
+        border: 1px solid black;
+      }
+    </style>
+</head>
+<body>
+    <div>
+        <p id="p">
+          Ft-Web 0 
+    </p>
+   </div>
+    <button>
+        <a href="index.html">Form Page</a>
+    </button>
+    <table>
+        <thead>
+            <tr>
+                <th>name</th>
+                <th>course</th>
+                <th>unit</th>
+                <th>image</th>
+                <th>batch</th>
+                <th>remove</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- code here -->
+        </tbody>
+    </table>
+</body>
+</html>
+<script>
+     let database = JSON.parse(localStorage.getItem("student")) || []
+      display(database)
+        
+     function display(database){
+        document.querySelector("tbody").innerHTML = ""
+        document.querySelector("p").innerHTML = ""
+       
+
+        database.forEach(function(elem,index){
+             let r = document.createElement("tr")
+             let c = document.createElement("td")
+             c.innerText = elem.name
+             let c1 = document.createElement("td")
+             c1.innerText = elem.course
+             let c2 = document.createElement("td")
+             c2.innerText = elem.unit
+             let c3 = document.createElement("td")
+               let img = document.createElement("img")
+               img.src = elem.image
+               c3.append(img)
+             let c4 = document.createElement("td")
+             c4.innerText = elem.batch
+             let c5 = document.createElement("td")
+             c5.innerText = "remove"
+             c5.addEventListener("click",function(){
+                del(elem,index)
+             })
+          
+                 r.append(c,c1,c2,c3,c4,c5)
+             document.querySelector("tbody").append(r)
+            
+          
+          
+        
+        });
+        let ans =  calculate()
+             let p = document.querySelector("#p")
+        
+        for(let k in ans){
+           let b = document.createElement("span")
+           b.innerText = " "+k+" "
+           b.innerText +="-"+" "+ans[k]+" "
+
+           p.append(b)
+        }
+     }
+       function del(elem,index){
+        database.splice(index,1)
+        localStorage.setItem("student" ,JSON.stringify(database))
+        display(database)
+       }
+
+       function calculate(){
+        let p = document.querySelector("#p")
+        let database = JSON.parse(localStorage.getItem("student")) || []
+        let obj = {}
+       
+
+        for(i=0 ;i<database.length;i++){
+            if(!obj[database[i].batch]){
+                obj[database[i].batch] = 1
+            }
+            else{
+                obj[database[i].batch]++
+            }
+
+        }
+       return obj 
+      
+         
+       }
+    
+
+</script>

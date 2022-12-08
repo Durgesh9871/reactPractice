@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>   
+    <div>
+    <h1>Add Products</h1>
+    <input type="text" id="id" placeholder="id">
+    <input type="text" id="title" placeholder="Title">
+    <input type="text" id="author" placeholder="enter your authon">
+    <button onclick="addProduct()">Submit</button>
+</div>
+
+ <div>
+    <h1>Delete Products</h1>
+
+
+    <input type="text"  id="delete_Id" placeholder="Enter Delete Id">
+    <button onclick="deleteId()">submit</button>
+</div>
+
+  <div>
+    <h1>Update Anything</h1>
+    <input type="text" placeholder="Enter id for update" id="update_id" >
+    <input type="text" placeholder="Enter Title for update" id="update_title">
+    <button onclick="updateId()">submit</button>
+
+  </div>
+    
+     <div>
+   <h1>Replace Anything</h1>
+   <input type="text" placeholder="Enter id for Replace" id="replace_id" >
+    <input type="text" placeholder="Enter Title for Replace" id="replace_title">
+    <button onclick="replaceId()">submit</button>
+
+
+     </div>
+
+    
+</body>
+</html>
+<script>
+    let container = document.getElementById("container")
+    
+    async function addProduct(){
+        let id = document.getElementById("id").value 
+        let title = document.getElementById("title").value 
+        let author = document.getElementById("author").value 
+         
+        let send_data = {
+            id,
+            title,
+            author,
+
+            
+        };
+        // console.log(send_data)
+
+        let req = await fetch(`http://localhost:3000/posts`, {
+            method:'POST' ,
+            
+             body: JSON.stringify(send_data),
+
+            headers:  {
+                'Content-Type':'application/json' ,
+            },
+
+
+        } )
+
+        let data = await req.json()
+        console.log(data)
+
+
+
+    }
+
+
+   async function deleteId (){
+      
+    let Id = document.getElementById("delete_Id").value 
+      
+      let res = await fetch(`http://localhost:3000/posts/${Id}`, {
+          
+           method:'DELETE',
+
+         headers:  {
+                'Content-Type':'application/json' ,
+            },
+
+      })
+
+      let data = await res.json()
+      console.log(data)
+
+    }
+
+
+    async function updateId(){
+        let Id = document.getElementById("update_id").value 
+        let title = document.getElementById("update_title").value 
+           
+        let update_data = {
+            title,
+        }
+
+        let res = await fetch(`http://localhost:3000/posts/${Id}`,{
+            method:'PATCH',
+            body:JSON.stringify(update_data) ,
+
+            headers:{
+                'Content-Type':'application/json' ,
+            },
+
+        })
+       let data = await res.json()
+       console.log(data)
+
+    }
+  
+  
+    let replaceId = async ()=>{
+         let Id = document.getElementById("replace_id").value
+         let title = document.getElementById("replace_title").value 
+
+         let replace_data = {
+            title,
+         }
+         
+        let res = await fetch(`http://localhost:3000/posts/${Id}`,{
+              method:'PUT' ,
+              body:JSON.stringify(replace_data),
+
+              headers:{
+                'Content-Type':'application/json',
+              },
+
+        })
+       let data = await res.json()
+       console.log(data)
+    }
+  
+   
+     
+
+    
+
+
+
+    
+
+    // let display = async ()=>{
+    //     try{
+    //         let res = await fetch('http://localhost:3000/posts')
+    //         let data = await res.json()
+    //         console.log(data)
+    //         display_dom(data)
+    //     }
+    //     catch(err){
+    //         console.log(err)
+    //     }
+    // }
+    // display()
+
+
+    // function display_dom(data){
+    //     container.innerHTML = null 
+    //     data.forEach((el) => {
+    //         if(el.author !== ""){
+    //         let div = document.createElement("div")
+    //         let img = document.createElement("img")
+    //         img.src = el.author
+    //         let ti = document.createElement("h3")
+    //         ti.innerText = el.title
+
+    //         div.append(img,ti)
+    //         container.append(div)
+    //         }
+    //     });
+    // }
+
+</script>

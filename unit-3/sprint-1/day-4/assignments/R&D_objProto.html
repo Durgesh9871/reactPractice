@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Prototype by obj </h1>
+    <form id="form" onsubmit="myFunc(event)">
+        <input type="text" id="name" placeholder="Name Of Car">
+        <input type="text" id="model" placeholder="Model No Of car">
+        <input type="submit">
+    </form>
+
+    <h1>Protype by constructor</h1>
+    <form id="form1" onsubmit="myFunc1(event)">
+        <input type="text" id="name1" placeholder="Name Of Car">
+        <input type="text" id="model1" placeholder="Model No Of car">
+        <input type="submit">
+    </form>
+    
+
+</body>
+</html>
+<script>
+//  ------------------------------------>Prototype by obj -------------->
+
+    let proto = {
+        company:"tata" ,
+        wheel:4 ,
+        gear:6 ,
+        headlight:2 ,
+        backlight:2,
+        sidemirror:2,
+
+    }
+    let all_car_data = []
+
+    function myFunc(event){
+        event.preventDefault()
+        let form = document.querySelector("#form")
+        let autoMobile = Object.create(proto)
+        autoMobile.name = form.name.value 
+        autoMobile.model = form.model.value 
+        all_car_data.push(autoMobile)
+
+        console.log(all_car_data)
+    }
+
+
+
+    // ------------------------------prototype of constructor functions -------------------->
+    // constructor functions
+  let construct_Array = []
+    function type(n,b){
+        this.name = n
+        this.brand= b 
+    }
+
+     type.prototype.brand="tata"
+     type.prototype. wheel=4
+     type.prototype.gear=6
+     type.prototype.headlight=2
+     type.prototype.backlight=2
+     type.prototype.sidemirror=2
+
+
+
+
+     
+   function myFunc1(event){
+    event.preventDefault()
+    let form1 = document.querySelector("#form1")
+        let name = form1.name1.value
+        let model = form1.model1.value
+        let value =  new type(name,model)
+        construct_Array.push(value)
+        console.log(construct_Array)
+     
+      
+
+   }
+   
+   
+    
+
+      
+
+</script>

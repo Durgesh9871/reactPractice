@@ -1,0 +1,29 @@
+{
+  "posts": [
+    {
+      "id": 0,
+      "title": "json-server",
+      "author": ""
+    },
+    {
+      "id": "1",
+      "title": "Headphones",
+      "author": "Durgesh"
+    }
+  ],
+  "menu":[] ,
+  
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+
+ 
+
+}

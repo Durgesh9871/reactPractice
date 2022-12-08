@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    // let name = ["sima","radha","hema"]
+    let arr = [1,2,3,4,5,6]
+
+     function work(i,array){
+         this[i] =array
+     }
+
+
+    // ---------name is array of objects made by construction func 
+    //  &&  i and arr[i]  are keys and values 
+  let name = []
+     for(i=0 ;i<arr.length;i++){
+            let ans = new work(i,arr[i])
+            name.push(ans)
+        }
+    
+
+ // my push prototype
+    Array.prototype.myRulePush = function (value){
+        let index = this.length
+        this[index] = value 
+    }
+
+    // my pop prototype 
+    Array.prototype.myRulePop = function(){
+        let index = this.length-1
+        this.splice(index,1)
+    }
+//    my pop prototype 
+    name.myRulePop()
+    name.myRulePop()
+    name.myRulePop()
+  
+    // my push prototype
+    name.myRulePush("sita")
+    name.myRulePush("1")
+    name.myRulePush(2)
+    console.log(name)
+
+
+
+</script>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <p id="p">
+          FT-Web 0
+    </p>
+</div>
+    
+    <button>
+        <a href="database.html">Data Base</a>
+    </button>
+    <form  id="form" onsubmit="myfunc(event)">
+        <input type="text" placeholder="Enter Your Name" id="name">
+        <input type="text" placeholder="Enter Your Course" id="course">
+        <input type="text" placeholder="Unit" id="unit">
+        <input type="text" placeholder="image" id="image">
+        <input type="text" placeholder="batch" id="batch">
+        <input type="submit">
+    </form>
+</body>
+</html>
+<script>
+   
+       let data = JSON.parse(localStorage.getItem("student")) || []
+
+        function obj(n,c,u,i,b){
+             this.name = n 
+             this.course = c 
+             this.unit = u 
+             this.image = i 
+             this.batch = 
+            //  b
+              `Ft-web ${b}`
+        }
+
+       function myfunc(event){
+         document.querySelector("#p").innerHTML=""
+        
+        event.preventDefault()
+        let form = document.querySelector("form")
+        let name = form.name.value
+        let course = form.course.value
+        let unit = form.unit.value 
+        let image = form.image.value
+        let batch = form.batch.value 
+        
+        let detail = new obj(name,course, unit, image,batch)
+         data.push(detail)
+         localStorage.setItem("student",JSON.stringify(data))
+
+
+         let ans =  calculate()
+         let p = document.querySelector("#p")
+        
+        for(let k in ans){
+           let b = document.createElement("span")
+           b.innerText = " "+k+" "
+           b.innerText +="-"+" "+ans[k]+" "
+
+           p.append(b)
+        }
+       
+        }
+        function calculate(){
+         let p = document.querySelector("#p")
+         let data = JSON.parse(localStorage.getItem("student")) || []
+         let obj = {}
+        
+ 
+         for(i=0 ;i<data.length;i++){
+             if(!obj[data[i].batch]){
+                 obj[data[i].batch] = 1
+             }
+             else{
+                 obj[data[i].batch]++
+             }
+ 
+         }
+        return obj 
+       
+          
+        }
+          
+          
+        
+       
+        
+       
+       
+        
+        
+
+    
+   
+
+      
+      
+     
+</script>
