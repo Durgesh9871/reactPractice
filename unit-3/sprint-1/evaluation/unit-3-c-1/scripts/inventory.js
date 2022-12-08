@@ -37,3 +37,4 @@ let Inventory= JSON.parse(localStorage.getItem("products")) || []
 
 
 }
+// console.log('hello world')

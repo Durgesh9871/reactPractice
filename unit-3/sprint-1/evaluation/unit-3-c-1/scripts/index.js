@@ -24,5 +24,6 @@ function myfunc(event){
        form.image.value =""
    
 }
+// console.log('hello world')
 
 // 
